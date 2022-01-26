@@ -26,25 +26,39 @@ function NoDisassemblingPlease.getSafehouseAccessLevel(player, safehouse)
 	end
 end
 
-function NoDisassemblingPlease.allowDestroyEverywhere(player)
+function NoDisassemblingPlease.allowDestroyEverywhere(player)	
+	if not player:getModData()["voc:trust"] then
+		return false
+	else 
+		local trust = player:getModData()["voc:trust"]	
 
-	local levels = NoDisassemblingPlease.everywhereLevels
-	local accessLevel = player:getAccessLevel()
-	local authorizedLevel = SandboxVars.NoDisassemblingPlease.AllowDestroyEverywhere
+		-- local levels = NoDisassemblingPlease.everywhereLevels
+		-- local accessLevel = player:getAccessLevel()
+		-- local authorizedLevel = SandboxVars.NoDisassemblingPlease.AllowDestroyEverywhere
 
-	return levels[accessLevel] and levels[accessLevel] >= authorizedLevel
+		return trust >= 2
+	end
 end
 
-function NoDisassemblingPlease.allowDestroySafehouse(player, square)
+function NoDisassemblingPlease.allowDestroySafehouse(player, square)	
+	if not player:getModData()["voc:trust"] then
+		return false
+	else
+		local trust =  player:getModData()["voc:trust"]
+		
+		local safehouse = SafeHouse.getSafeHouse(square)
+		if safehouse then
 
-	local safehouse = SafeHouse.getSafeHouse(square)
-	if safehouse then
+			local accessLevel = NoDisassemblingPlease.getSafehouseAccessLevel(player, safehouse)
 
-		local levels = NoDisassemblingPlease.safehouseLevels
-		local accessLevel = NoDisassemblingPlease.getSafehouseAccessLevel(player, safehouse)
-		local authorizedLevel = SandboxVars.NoDisassemblingPlease.AllowDestroySafehouse
+			-- local levels = NoDisassemblingPlease.safehouseLevels				
+			-- local authorizedLevel = SandboxVars.NoDisassemblingPlease.AllowDestroySafehouse
+			-- return levels[accessLevel] and levels[accessLevel] >= authorizedLevel
 
-		return levels[accessLevel] and levels[accessLevel] >= authorizedLevel
+			return (trust >= 1 and accessLevel ~= "None") or trust >= 2
+		else
+			return false
+		end
 	end
 end
 
