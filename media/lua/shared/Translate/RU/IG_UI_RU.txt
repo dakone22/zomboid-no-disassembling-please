@@ -1,0 +1,4 @@
+IG_UI_EN = {
+	IGUI_NoDestroyingAllowed = "Разрушение не разрешено!"
+	IGUI_NoDisassemblingAllowed = "Разбор не разрешен!"
+}
