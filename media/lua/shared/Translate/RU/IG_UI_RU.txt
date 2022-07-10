@@ -1,4 +1,4 @@
 IG_UI_EN = {
-	IGUI_NoDestroyingAllowed = "Р Р°Р·СЂСѓС€РµРЅРёРµ РЅРµ СЂР°Р·СЂРµС€РµРЅРѕ!"
-	IGUI_NoDisassemblingAllowed = "Р Р°Р·Р±РѕСЂ РЅРµ СЂР°Р·СЂРµС€РµРЅ!"
+	IGUI_NoDestroyingAllowed = "Разрушение не разрешено!"
+	IGUI_NoDisassemblingAllowed = "Разбор не разрешен!"
 }
