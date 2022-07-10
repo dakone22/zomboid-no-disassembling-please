@@ -1,6 +1,6 @@
 version=1
-id=2705751144
-title=No Disassembling Please!
+id=2832964029
+title=[PA] No Disassembling Please!
 description=[h1]Description[/h1]
 description=On some servers people keep disassembling whole cities, making the world an empty place. Also players tend to pick up containers so loot respawn won't happen. If that happens on your server you can use this mod to help addressing the issue.
 description=
@@ -51,7 +51,7 @@ description=[/list]
 description=Feedbacks are welcome! You can find me on Project Zomboid Discord server:
 description=https://discord.com/invite/theindiestone
 description=
-Workshop ID: 2705751144
-Mod ID: NoDisassemblingPlease
+Workshop ID: 2832964029
+Mod ID: PANoDisassemblingPlease
 tags=Build 41;Misc;Multiplayer
 visibility=public
